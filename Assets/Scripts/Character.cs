@@ -42,6 +42,7 @@ public class Character : MonoBehaviour {
 
         sr.flipX = !facingRight;
         //se modifico el script para que este solo pueda saltar cuando esta tocando el piso 
+        //se lanza un rayo hacia el personaje cuando este intenta saltar cuando no esta tocando el piso
         if (Input.GetButtonDown("Jump")) {
             RaycastHit2D raycast = Physics2D.Raycast(feet.transform.position, Vector2.down, 0.1f, layerMask);
             if (raycast.collider != null)
